@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <style>
+      html {
+        background-color: #f0f0f0;
+      }
+    </style>
+    <script async src="https://unpkg.com/@sassoftware/va-report-components@0.14.0/dist/umd/va-report-components.js"></script>
+  </head>
+  <body></body>
+  <script> 
+    window.addEventListener("vaReportComponents.loaded", () => {
+      const reportElement = new vaReportComponents.SASReportElement();
+      reportElement.url = "https://viya-bdata.hackinsas.vectorlabs.sas.com";
+      reportElement.reportUri = "/reports/reports/2687dc96-dc1e-4265-bdcb-ab314de34019";
+      reportElement.authenticationType = "credentials";
+      reportElement.style.setProperty("--sas-report-background-color", "#0074BE");
+      reportElement.style.setProperty("--sas-report-padding", "1rem");
+
+      document.body.appendChild(reportElement);
+    });
+  </script>
+</html>
